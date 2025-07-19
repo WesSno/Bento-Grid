@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /************** COLORS *****************/
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  background-color: rgb(246, 246, 246);
+  padding: 1em;
+  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.card_image {
+  width: 200px;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  display: grid;
+  gap: 2em;
+}
+
+.review_card {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  background-color: var(--purple-500);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.review_card .card_image {
+  align-self: end;
+}
+
+.review_card h1 {
+  font-size: 2.6em;
+  line-height: 0.9em;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+}
+
+.enhancement {
+  color: var(--yellow-500);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.accounts_card,
+.schedule_card,
+.followers_card,
+.audience-growth_card,
+.content_card {
+  display: grid;
+  row-gap: 20px;
+  padding: 1em;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.followers_card h2,
+.post_card h2,
+.content_card h2 {
+  font-size: 1.6em;
+  font-weight: 500;
+  line-height: 0.8em;
+}
+
+.accounts_card {
+  place-items: center;
+  text-align: center;
+  background-color: var(--white);
+}
+
+.accounts_card .card_image {
+  width: 80%;
+}
+
+.accounts_card h2,
+.consistency_card h2,
+.schedule_card h2 {
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.consistency_card {
+  display: grid;
+  row-gap: 1em;
+  padding: 1em 1em 0 1em;
+  background-color: var(--yellow-500);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.consistency_card .card_image img {
+  margin-bottom: -1.2em;
+}
+
+.schedule_card {
+  background-color: var(--purple-100);
+  place-items: center;
+  padding: 1em;
+}
+
+.schedule_card .card_image {
+  width: 300px;
+}
+
+.schedule_card p {
+  text-align: center;
+  font-weight: 400;
+}
+
+.followers_card {
+  color: white;
+  background-color: var(--purple-500);
+  padding: 2em;
+  place-items: center;
+}
+
+.followers_card h2 {
+  padding: 1em 1em 0em 1em;
+  text-align: center;
+}
+
+.audience-growth_card {
+  background-color: white;
+}
+
+.post_card {
+  display: grid;
+  row-gap: 1em;
+  background-color: var(--yellow-100);
+  padding: 1.5em;
+  border-radius: 10px;
+}
+
+.post_card .highlighted {
+  font-style: italic;
+  color: var(--purple-500);
+}
+
+.content_card {
+  background-color: var(--yellow-500);
+}
+
+footer {
+  margin-top: 4em;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 250px 250px 170px 250px 250px;
+  }
+
+  .review_card {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .schedule_card {
+    grid-row: 3 / 5;
+  }
+
+  .post_card {
+    grid-row: 5 / 6;
+  }
+
+  .content_card {
+    place-items: center;
+    align-items: center;
+    grid-row: 4 / 6;
+  }
+
+  .content_card .card_image {
+    width: 80%;
+  }
+
+  .followers_card {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1;
+    grid-row: 6 / -1;
+  }
+
+  .followers_card h2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main {
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: 300px 100px 150px 240px;
+  }
+
+  .post_card {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  .post_card h2,
+  .content_card h2,
+  .followers_card h2 {
+    align-self: end;
+    font-size: 2em;
+    line-height: 1em;
+  }
+
+  .review_card {
+    grid-column: 2 / 4;
+  }
+
+  .review_card h1,
+  .audience-growth_card h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+  }
+
+  .schedule_card {
+    grid-column: 4 / -1;
+    grid-row: 1 / 4;
+  }
+
+  .schedule_card h2,
+  .consistency_card h2,
+  .accounts_card h2 {
+    justify-self: start;
+    width: 60%;
+    font-size: 1.6em;
+  }
+
+  .schedule_card p {
+    justify-self: start;
+    width: 70%;
+    text-align: left;
+  }
+
+  .accounts_card {
+    gap: 0;
+    grid-row: 2 / 4;
+  }
+
+  .accounts_card .card_image {
+    justify-self: start;
+
+    width: 150%;
+  }
+
+  .consistency_card {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+  }
+
+  .consistency_card h2,
+  .accounts_card h2 {
+    text-align: left;
+    line-height: 1em;
+    width: 100%;
+  }
+
+  .content_card {
+    grid-row: 3 / -1;
+  }
+
+  .content_card h2 {
+    align-self: start;
+  }
+
+  .content_card .card_image {
+    width: 100%;
+  }
+
+  .followers_card {
+    grid-column: 3 / -1;
+    grid-row: 4 / -1;
+  }
+
+  .followers_card h2 {
+    text-align: left;
+    align-self: center;
+  }
+
+  .audience-growth_card {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+  }
+}
